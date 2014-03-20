@@ -2,15 +2,23 @@
   "name": "nodejs-sample",
   "version": "0.0.1",
   "description": "A sample project for NodeJS",
-  "keywords": ["nodejs", "sample"],
+  "keywords": [
+    "nodejs",
+    "sample"
+  ],
   "author": "Ragesh Krishna <rageshk@qhode.com>",
   "main": "index",
-  "engines": { "node": ">= 0.10.x" },
+  "engines": {
+    "node": ">= 0.10.x"
+  },
   "scripts": {
     "test": "make test"
   },
   "devDependencies": {
-    "mocha": "1.12.x",
-    "istanbul": "0.1.x" 
+    "istanbul": "0.1.x",
+    "xunit-file": "0.0.5"
+  },
+  "dependencies": {
+    "mocha": "^1.18.2"
   }
 }

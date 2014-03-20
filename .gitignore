@@ -116,3 +116,4 @@ UpgradeLog*.XML
 qhode/*
 node_modules
 coverage/
+shippable/
