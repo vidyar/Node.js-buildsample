@@ -8,7 +8,7 @@ describe('nextPrime', function() {
   });
   
   it('nextPrime should return the next prime number', function() {
-    assert.equal(27, nextPrime(17));
+    assert.equal(19, nextPrime(17));
   });
 
 
