@@ -7,5 +7,5 @@ after_script:
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 notifications:
   email:
-     - vidyac.raghav@gmail.com  
+     - vidya@shippable.com
      - vidyatest@hotmail.com
