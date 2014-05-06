@@ -4,15 +4,9 @@ node_js:
   - "0.11"
   - "0.10"
 
-addons:
-  firefox: "21.0"
-  hosts:
-    - google.com
-    - asdf.com
-  
+
 before_install:
-  - firefox --version
-  
+  - npm install contextify
 before_script: mkdir -p shippable/codecoverage
 
 after_script: 
