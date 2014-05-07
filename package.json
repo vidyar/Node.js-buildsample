@@ -9,6 +9,7 @@
   "scripts": {
     "test": "make test"
   },
+  
   "dependencies": {
     "contextify": "~0.1.5"
     },
