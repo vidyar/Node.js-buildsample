@@ -6,7 +6,7 @@ language: node_js
 before_script:
  - mkdir -p shippable/codecoverage
 
-before_install: 
+install: 
  - npm install contextify
  
 after_script: 
