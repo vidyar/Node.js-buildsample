@@ -1,2 +1,2 @@
-! Build samples
+! Build samples node.js
 
