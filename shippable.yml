@@ -13,6 +13,6 @@ after_script:
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 notifications:
-    email:
-        - vidyatest13@gmail.com
-        - vidyatest@hotmail.com
+  email:
+      - vidya_test1@yahoo.com
+      - vidyatest@hotmail.com
