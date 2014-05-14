@@ -8,7 +8,7 @@ node_js:
 branches:
   only:
     - master
-    - newbranch
+    - testing
 
 before_script: 
   - mkdir -p shippable/codecoverage
