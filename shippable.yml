@@ -1,17 +1,19 @@
 node_js:
   - "0.10"
   - "0.11"
-  - "0.8"
+ # - "0.8
+env:
+ global:
+   - secure: qTc3gThqB5hj15ipE+yAjw+P88nVWHky5IxdA3FhdfxhbKp7gurSEJrFp0Mw1IkXjQkcgK/TNtD7thSwbde5KyW4KAKKxBDQorx7uwpTxhLMBeNxIurCk0tGnpftWQyg4+r5Pic888kQFvgE9TadvqUWYVaBXYtR77LR2To+wodLyuZk+tKzvMXc5Amwfo5WYe3JWDI/PEtGqLWvKuli6RifIbuCLjQtZq14CaFp2jlwXSigiBYM/VlNEZyX93yVJd1V6qfZ8KoIre0CrsMmBf2fxrAFfsjK7LCHm3LmW6irdhaclVQ8pVbsvHQavQxh6qlzj3hh9bf+99nlSOZI7g==
   
 language: node_js
 
 before_script:
  - mkdir -p shippable/codecoverage
 
-install: 
- - npm install contextify
- 
-after_script: 
+afrer_script: 
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 
+after_success:
+ - git push $heroku master
