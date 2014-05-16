@@ -4,16 +4,19 @@ node_js:
  # - "0.8
 env:
  global:
-   - secure: qTc3gThqB5hj15ipE+yAjw+P88nVWHky5IxdA3FhdfxhbKp7gurSEJrFp0Mw1IkXjQkcgK/TNtD7thSwbde5KyW4KAKKxBDQorx7uwpTxhLMBeNxIurCk0tGnpftWQyg4+r5Pic888kQFvgE9TadvqUWYVaBXYtR77LR2To+wodLyuZk+tKzvMXc5Amwfo5WYe3JWDI/PEtGqLWvKuli6RifIbuCLjQtZq14CaFp2jlwXSigiBYM/VlNEZyX93yVJd1V6qfZ8KoIre0CrsMmBf2fxrAFfsjK7LCHm3LmW6irdhaclVQ8pVbsvHQavQxh6qlzj3hh9bf+99nlSOZI7g==
+   - secure: dSAQyUQeZat5NAq5nEfh3gKf+uwXpuDaBfbAH8DNRtpm9LyIPFeq1b4JZMICsLrox9j8m5GBjiNv7dxX+8qUs/5nubp/AEkRuqFJvMk3xniEDE0T3+RvlexMdmInHgkB5fgySizg6YghQ4exD02IPd9kjGgBjZ9Fs0FjuG5xtQS2uiARoQ0QRvpfngzjnt1OLnGJTESen0fvWbIcLONJlM++B8zoGHPqhDpRfMe997RQHobrPYfDmlLEAHbIg7Ht9mXxRgtALcFQaSf8b7CcyMjr3sA46ObqRRQCjAoerkz/ZAd08XqGOsIO0Ys/gndHdYwN9K2O3RXPpzeszXknkQ== 
+
   
 language: node_js
 
 before_script:
  - mkdir -p shippable/codecoverage
 
+script:
+  - echo $name
 afrer_script: 
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 
-after_success:
- - git push $heroku master
+#after_success:
+ #- git push $heroku master
