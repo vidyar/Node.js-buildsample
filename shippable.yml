@@ -2,18 +2,13 @@ node_js:
   - "0.10"
   - "0.11"
  # - "0.8
-env:
- global:
-   - secure: dSAQyUQeZat5NAq5nEfh3gKf+uwXpuDaBfbAH8DNRtpm9LyIPFeq1b4JZMICsLrox9j8m5GBjiNv7dxX+8qUs/5nubp/AEkRuqFJvMk3xniEDE0T3+RvlexMdmInHgkB5fgySizg6YghQ4exD02IPd9kjGgBjZ9Fs0FjuG5xtQS2uiARoQ0QRvpfngzjnt1OLnGJTESen0fvWbIcLONJlM++B8zoGHPqhDpRfMe997RQHobrPYfDmlLEAHbIg7Ht9mXxRgtALcFQaSf8b7CcyMjr3sA46ObqRRQCjAoerkz/ZAd08XqGOsIO0Ys/gndHdYwN9K2O3RXPpzeszXknkQ== 
 
-  
 language: node_js
 
 before_script:
  - mkdir -p shippable/codecoverage
 
-script:
-  - echo $name
+
 afrer_script: 
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
