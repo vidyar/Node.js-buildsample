@@ -7,14 +7,17 @@ language: node_js
 
 before_script:
  - mkdir -p shippable/codecoverage
-
+env:
+ matrix:
+  - secure: t1xDq5LTX8HOJFxXgViuMNBkTW3M1C7HTdOa7aqd8XPrW0YWw/CzW3/ika1xdSoxa2ki4WUkJcAf75/fqNATLntwtArX4jDqM1q9KrpRYDkc6JoHO6WdlrCXn9gYwESt3EA9nDg7vVLB2W120v6QSceUQKr1j/6EMnjzfAzbqBrFvcdQ7f7Jn2YPqp9rGsuY6Eu1yWIeprSTn+Cn6UntYHg3Y+Z0hgJat6MsrVcqYAkSUh7GMiAsFYoABK+yRvc2FrZGEEVH8uAaw8XH1fktergO4M/UAxgl9vxcAdqPSn5mrRHHyK18Q9bfT+ETHZn7EWvUxRKONZThSAaeLosDZg==
+  
 
 afrer_script: 
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 
-#after_success:
- #- git push $heroku master
+after_success:
+ - git push $Heroku master
 matrix:
  include: 
   - node_js: 0.11
