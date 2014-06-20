@@ -18,9 +18,7 @@ afrer_script:
 
 after_success:
  - git push $Heroku master
-matrix:
- include: 
-  - node_js: 0.11
+
 branches:
   except:
      - develop
