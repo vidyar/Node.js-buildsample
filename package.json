@@ -9,7 +9,7 @@
   "author": "Ragesh Krishna <rageshk@qhode.com>",
   "main": "index",
   "engines": {
-    "node": ">= 0.10.x"
+    "node": ">= 0.8.x"
   },
   "scripts": {
     "test": "make test"
