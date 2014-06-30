@@ -20,7 +20,7 @@ after_success:
 install: true
 script: true 
 before_archive:
-    - cp READme.md shippable/src
+    - cp README.md shippable/src
 after_archive:
     - echo $SHIPPABLE_ARTIFACTS_URL
     - echo $ARTIFACTS_UPLOAD_SUCCESSFUL
