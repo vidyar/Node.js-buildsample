@@ -23,3 +23,4 @@ before_archive:
     - cp index.js shippable/src
 after_archive:
     - echo $SHIPPABLE_ARTIFACTS_URL
+    - echo $ARTIFACTS_UPLOAD_SUCCESSFUL
