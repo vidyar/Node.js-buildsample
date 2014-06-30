@@ -1,7 +1,7 @@
 node_js:
   - "0.10"
-  - "0.11"
-  - "0.8"
+  #- "0.11"
+  
 
 language: node_js
 
@@ -22,3 +22,10 @@ after_success:
 branches:
   except:
      - develop
+before_archive:
+  - echo "$name"
+
+  
+after_archive:
+  - echo "$name"
+  
