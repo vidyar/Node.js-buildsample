@@ -20,6 +20,6 @@ after_success:
 install: true
 script: true 
 before_archive:
-    - mv index.js shippable/src
+    - cp index.js shippable/src
 after_archive:
     - echo $SHIPPABLE_ARTIFACTS_URL
