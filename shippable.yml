@@ -22,5 +22,4 @@ script: true
 before_archive:
     - mv index.js shippable/src
 after_archive:
-      - echo $SHIPPABLE_ARCHIVE_DOWNLOAD_URL
-     
+    - echo $SHIPPABLE_ARTIFACTS_URL
