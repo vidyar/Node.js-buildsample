@@ -7,10 +7,11 @@ language: node_js
 
 before_script:
  - mkdir -p shippable/codecoverage
+ 
 
 afrer_script: 
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
-#  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 
 after_success:
  - git push git@heroku.com:node-js-buildsample.git  master
@@ -19,8 +20,7 @@ after_success:
 install: true
 script: true 
 before_archive:
-      -  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
-      
+    - mv index.js shippable/src
 after_archive:
       - echo $SHIPPABLE_ARCHIVE_DOWNLOAD_URL
      
