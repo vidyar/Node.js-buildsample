@@ -9,15 +9,14 @@ before_script:
  - mkdir -p shippable/codecoverage
 env:
  matrix:
-  - secure: t1xDq5LTX8HOJFxXgViuMNBkTW3M1C7HTdOa7aqd8XPrW0YWw/CzW3/ika1xdSoxa2ki4WUkJcAf75/fqNATLntwtArX4jDqM1q9KrpRYDkc6JoHO6WdlrCXn9gYwESt3EA9nDg7vVLB2W120v6QSceUQKr1j/6EMnjzfAzbqBrFvcdQ7f7Jn2YPqp9rGsuY6Eu1yWIeprSTn+Cn6UntYHg3Y+Z0hgJat6MsrVcqYAkSUh7GMiAsFYoABK+yRvc2FrZGEEVH8uAaw8XH1fktergO4M/UAxgl9vxcAdqPSn5mrRHHyK18Q9bfT+ETHZn7EWvUxRKONZThSAaeLosDZg==
-  
+  - secure: sju9owzExdQGRkscc2k5z/XvAgtWtrJYnDJAjI+/KMLA8XeSpGjtPPun1EOEOgEjQRRN4b8IqZKjHAwlA6Bx/2qLDgj+7vQfMai76/bfKFvTin9Q+hSUA20Osbo+YGBDtf4N/lRVzKlzWokyk7IJenTEd2zFXL5nzpJjmH700+HoagEKyqrZJllD5xfmg4uWZ0zWbVJ1HRVUjFKg0lfzA/QC8SZlXqP0HyZB2+EtwIn4uvovPKYwf9eNAXenc2iNoN/OgOV7updVigpJIzyPkTVl5ORh0TdjXooiB6kCtWblOENmDiYtgnwqWoHyaEg2+vNPAQar0JGDjkmYDjIGug==
 
 afrer_script: 
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 
 after_success:
- - git push $Heroku master
+ - git push git@heroku.com:node-js-buildsample.git  master
 
 branches:
   except:
