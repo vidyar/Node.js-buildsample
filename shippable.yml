@@ -7,24 +7,20 @@ language: node_js
 
 before_script:
  - mkdir -p shippable/codecoverage
-env:
- matrix:
-  - secure: sju9owzExdQGRkscc2k5z/XvAgtWtrJYnDJAjI+/KMLA8XeSpGjtPPun1EOEOgEjQRRN4b8IqZKjHAwlA6Bx/2qLDgj+7vQfMai76/bfKFvTin9Q+hSUA20Osbo+YGBDtf4N/lRVzKlzWokyk7IJenTEd2zFXL5nzpJjmH700+HoagEKyqrZJllD5xfmg4uWZ0zWbVJ1HRVUjFKg0lfzA/QC8SZlXqP0HyZB2+EtwIn4uvovPKYwf9eNAXenc2iNoN/OgOV7updVigpJIzyPkTVl5ORh0TdjXooiB6kCtWblOENmDiYtgnwqWoHyaEg2+vNPAQar0JGDjkmYDjIGug==
 
 afrer_script: 
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -u tdd 
-  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+#  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
 
 after_success:
  - git push git@heroku.com:node-js-buildsample.git  master
 
-branches:
-  except:
-     - develop
-before_archive:
-  - echo "$name"
 
-  
+install: true
+script: true 
+before_archive:
+      -  - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+      
 after_archive:
-  - echo "$name"
-  
+      - echo $SHIPPABLE_ARCHIVE_DOWNLOAD_URL
+     
