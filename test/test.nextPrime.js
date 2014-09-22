@@ -4,7 +4,7 @@ var assert = require('assert')
 
 describe('nextPrime', function() {
   it('nextPrime should return the next prime number', function() {
-    assert.equal(11, nextPrime(7));
+    assert.equal(12, nextPrime(7));
   });
   
   it('nextPrime should return the next prime number', function() {
